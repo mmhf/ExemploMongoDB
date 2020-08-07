@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace ExemploMongoDB.BLL
 {
-    public class UsuarioBLL : IUsuarioDados
+    public class UsuarioBLL : IUsuarioBLL
     {
-        private UsuarioDAL dal;
-        public UsuarioBLL(UsuarioDAL dalInstance)
+        private IUsuarioDados dal;
+        public UsuarioBLL(IUsuarioDados dalInstance)
         {
             this.dal = dalInstance;
         }

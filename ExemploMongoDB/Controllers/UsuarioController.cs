@@ -15,11 +15,10 @@ namespace ExemploMongoDB.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private IUsuarioDados bll;
-        public UsuarioController()
+        private IUsuarioBLL bll;
+        public UsuarioController(IUsuarioBLL bllInstance)
         {
-            var dal = new UsuarioDAL();
-            bll = new UsuarioBLL(dal);
+            this.bll = bllInstance;
         }
         // GET: api/<UsuarioController>
         [HttpGet]

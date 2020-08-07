@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ExemploMongoDB.BLL;
+using ExemploMongoDB.DAL;
+using ExemploMongoDB.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,7 +31,8 @@ namespace ExemploMongoDB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddTransient<IUsuarioDados, UsuarioDAL>();
+            services.AddTransient<IUsuarioBLL, UsuarioBLL>();
             // Configurando o serviço de documentação do Swagger
             services.AddSwaggerGen(c =>
             {
