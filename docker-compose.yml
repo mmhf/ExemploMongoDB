@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  mongo:
+    image: mongo
+  exemplomongodb:
+    image: ${DOCKER_REGISTRY-}exemplomongodb
+    build:
+      context: .
+      dockerfile: ExemploMongoDB/Dockerfile
+    depends_on:
+      - mongo
