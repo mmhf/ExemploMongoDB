@@ -64,7 +64,7 @@ namespace ExemploMongoDB.DAL
             var filter = Builders<T>.Filter.Eq("_id", id);
             collection.ReplaceOne(filter, ObjetoDal);
         }
-        public static void DelelteCollection<T>(string NomeObjeto, string id)
+        public static void DeleteCollection<T>(string NomeObjeto, string id)
         {
             var collection = MongoDatabase.GetCollection<T>(NomeObjeto);
             var filter = Builders<T>.Filter.Eq("_id", id);

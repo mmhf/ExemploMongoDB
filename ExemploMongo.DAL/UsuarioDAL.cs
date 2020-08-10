@@ -14,7 +14,7 @@ namespace ExemploMongoDB.DAL
 
         public void Excluir(string id)
         {
-            DbHelper.DelelteCollection<Usuario>("Usuario", id);
+            DbHelper.DeleteCollection<Usuario>("Usuario", id);
         }
 
         public void Incluir(Usuario usuario)
