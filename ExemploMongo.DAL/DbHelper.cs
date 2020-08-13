@@ -57,6 +57,11 @@ namespace ExemploMongoDB.DAL
             var usuarios = MongoDatabase.GetCollection<T>(NomeObjeto).AsQueryable<T>().ToList();
             return usuarios;
         }
+        public static T ObterDocument<T>(string NomeObjeto, string _id)
+        {
+            var filter = Builders<T>.Filter.Eq("_id", _id);
+            return MongoDatabase.GetCollection<T>(NomeObjeto).Find(filter).FirstOrDefault();
+        }
 
         public static void UpdateCollection<T>(T ObjetoDal, string id)
         {
