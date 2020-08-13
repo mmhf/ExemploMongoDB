@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.PlatformAbstractions;
+using RabbitMQPublisher;
 
 namespace ExemploMongoDB
 {
@@ -33,6 +34,8 @@ namespace ExemploMongoDB
             services.AddMvc();
             services.AddTransient<IUsuarioDados, UsuarioDAL>();
             services.AddTransient<IUsuarioBLL, UsuarioBLL>();
+
+            services.AddTransient<IRabbitMQSender, RabbitMQSender>();
             // Configurando o serviço de documentação do Swagger
             services.AddSwaggerGen(c =>
             {

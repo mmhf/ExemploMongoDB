@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ExemploMongo.DAL\ExemploMongoDB.DAL.csproj" />
     <ProjectReference Include="..\ExemploMongoDB.BLL\ExemploMongoDB.BLL.csproj" />
+    <ProjectReference Include="..\RabbitMQPublisher\RabbitMQPublisher.csproj" />
   </ItemGroup>
 
 

@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMongoDB", "ExemploMongoDB\ExemploMongoDB.csproj", "{BF4FDFA6-5A64-4FA9-A5D1-09FE7834C5A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploMongoDB", "ExemploMongoDB\ExemploMongoDB.csproj", "{BF4FDFA6-5A64-4FA9-A5D1-09FE7834C5A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMongoDB.DAL", "ExemploMongo.DAL\ExemploMongoDB.DAL.csproj", "{0D94BDFB-ACA6-4D2D-89F2-B2E89109B676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploMongoDB.DAL", "ExemploMongo.DAL\ExemploMongoDB.DAL.csproj", "{0D94BDFB-ACA6-4D2D-89F2-B2E89109B676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMongoDB.BLL", "ExemploMongoDB.BLL\ExemploMongoDB.BLL.csproj", "{DCEB233E-C148-4436-91FC-18D4C88F1CB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploMongoDB.BLL", "ExemploMongoDB.BLL\ExemploMongoDB.BLL.csproj", "{DCEB233E-C148-4436-91FC-18D4C88F1CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploMongoDB.Models", "ExemploMongoDB.Models\ExemploMongoDB.Models.csproj", "{385DF018-BF79-4064-B844-321D95470B37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExemploMongoDB.Models", "ExemploMongoDB.Models\ExemploMongoDB.Models.csproj", "{385DF018-BF79-4064-B844-321D95470B37}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DA349A02-657B-4B87-9BBD-4EEC8BA5D979}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RabbitMQ", "RabbitMQ", "{56DA20D5-5B25-4F76-BCAE-D3B1512E108B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQPublisher", "RabbitMQPublisher\RabbitMQPublisher.csproj", "{AD5FABB1-45DC-4759-B44F-6AF6AD75FDF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQConsumer", "RabbitMQConsumer\RabbitMQConsumer.csproj", "{3CF49933-9C77-4E59-8064-38D4E7AD354B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +45,21 @@ Global
 		{DA349A02-657B-4B87-9BBD-4EEC8BA5D979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA349A02-657B-4B87-9BBD-4EEC8BA5D979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA349A02-657B-4B87-9BBD-4EEC8BA5D979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD5FABB1-45DC-4759-B44F-6AF6AD75FDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5FABB1-45DC-4759-B44F-6AF6AD75FDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5FABB1-45DC-4759-B44F-6AF6AD75FDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5FABB1-45DC-4759-B44F-6AF6AD75FDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF49933-9C77-4E59-8064-38D4E7AD354B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF49933-9C77-4E59-8064-38D4E7AD354B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF49933-9C77-4E59-8064-38D4E7AD354B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF49933-9C77-4E59-8064-38D4E7AD354B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD5FABB1-45DC-4759-B44F-6AF6AD75FDF5} = {56DA20D5-5B25-4F76-BCAE-D3B1512E108B}
+		{3CF49933-9C77-4E59-8064-38D4E7AD354B} = {56DA20D5-5B25-4F76-BCAE-D3B1512E108B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06384618-CD50-4725-842C-E68BE8E0623F}

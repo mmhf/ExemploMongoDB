@@ -1,8 +1,25 @@
 version: '3.4'
 
-services:
+services:  
+  
   mongo:
+    container_name: mongodb
     image: mongo
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    restart: on-failure
+    ports:
+      - "15672:15672"
+      - "5672:5672"   
+
+  rabbitmqconsumer:
+    image: ${DOCKER_REGISTRY-}rabbitmqconsumer
+    build:
+        context: .
+        dockerfile: RabbitMQConsumer/Dockerfile
+
   exemplomongodb:
     image: ${DOCKER_REGISTRY-}exemplomongodb
     build:
