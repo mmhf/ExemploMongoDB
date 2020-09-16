@@ -49,13 +49,13 @@ namespace ExemploMongoDB.DAL
 
         public static IList<T> ObterCollection<T>(string NomeObjeto)
         {
-            var usuarios = MongoDatabase.GetCollection<T>(NomeObjeto).AsQueryable<T>().ToList();
-            return usuarios;
+            var collection = MongoDatabase.GetCollection<T>(NomeObjeto).AsQueryable<T>().ToList();
+            return collection;
         }
         public static IList<T> ObterDocument<T>(string NomeObjeto)
         {
-            var usuarios = MongoDatabase.GetCollection<T>(NomeObjeto).AsQueryable<T>().ToList();
-            return usuarios;
+            var collection = MongoDatabase.GetCollection<T>(NomeObjeto).AsQueryable<T>().ToList();
+            return collection;
         }
         public static T ObterDocument<T>(string NomeObjeto, string _id)
         {

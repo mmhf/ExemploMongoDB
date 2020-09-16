@@ -8,6 +8,7 @@ namespace RabbitMQConsumer
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             ReceiveMessage(RabbitMQSettings.QueueName);
@@ -39,6 +40,7 @@ namespace RabbitMQConsumer
                     var consumer = new EventingBasicConsumer(channel);
                     consumer.Received += (model, ea) =>
                     {
+                        
                         var body = ea.Body.ToArray();
                         var message = Encoding.UTF8.GetString(body);
                         Console.WriteLine(" [x] Received {0}", message);
