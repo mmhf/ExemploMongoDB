@@ -60,9 +60,21 @@ namespace ExemploMongoDB.DAL
         public static T ObterDocument<T>(string NomeObjeto, string _id)
         {
             var filter = Builders<T>.Filter.Eq("_id", _id);
+
             return MongoDatabase.GetCollection<T>(NomeObjeto).Find(filter).FirstOrDefault();
         }
-
+        public static T Single<T>(Expression<Func<T, bool>> expression) where T : class, new()
+        {
+            return All<T>().Where(expression).SingleOrDefault();
+        }
+        public static IQueryable<T> All<T>() where T : class, new()
+        {
+            return MongoDatabase.GetCollection<T>(typeof(T).Name).AsQueryable();
+        }
+        public static IQueryable<T> Where<T>(Expression<Func<T, bool>> expression) where T : class, new()
+        {
+            return All<T>().Where(expression);
+        }
         public static void UpdateCollection<T>(T ObjetoDal, string id)
         {
             var collection = MongoDatabase.GetCollection<T>(ObjetoDal.GetType().Name.ToString());

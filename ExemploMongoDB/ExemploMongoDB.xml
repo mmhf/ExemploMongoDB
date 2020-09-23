@@ -4,5 +4,16 @@
         <name>ExemploMongoDB</name>
     </assembly>
     <members>
+        <member name="T:ExemploMongoDB.CustomExtensionMethods">
+            <summary>
+                Classe de encapsulamento dos métodos de extensão dos serviços necessários a aplicação
+            </summary>
+        </member>
+        <member name="M:ExemploMongoDB.CustomExtensionMethods.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+                Adiciona e configura o gerador do swagger para criar a documentação da API diretamente dos modelos, controladores e
+                rotas. Como a versão da documentação e formas de autenticação.
+            </summary>
+        </member>
     </members>
 </doc>
