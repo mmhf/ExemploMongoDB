@@ -9,7 +9,7 @@ namespace ExemploMongoDB.DAL
     {
         public void Alterar(Usuario usuario)
         {
-            DbHelper.UpdateCollection<Usuario>(usuario, usuario.Id);
+            DbHelper.UpdateCollection(usuario, usuario.Id);
         }
 
         public void Excluir(string id)

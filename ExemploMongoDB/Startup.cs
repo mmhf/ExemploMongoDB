@@ -54,16 +54,12 @@ namespace ExemploMongoDB
             // Ativando middlewares para uso do Swagger
             app.UseSwagger(c =>
             {
-                c.SerializeAsV2 = true;                
-                c.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
-                {
-                    swaggerDoc.Servers = new List<Microsoft.OpenApi.Models.OpenApiServer> { new Microsoft.OpenApi.Models.OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}/exemplo-mongodb/" } };
-                    //swaggerDoc.Servers = new List<Microsoft.OpenApi.Models.OpenApiServer> { new Microsoft.OpenApi.Models.OpenApiServer { Url = $"/exemplo-mongodb/" } };                    
-                });
+                c.SerializeAsV2 = true; 
             });
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API EXEMPLO MONGO DB V1");                
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API EXEMPLO MONGO DB V1");
+                c.RoutePrefix = string.Empty;
             });
 
             app.UseHttpsRedirection();
