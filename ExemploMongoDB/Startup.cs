@@ -34,6 +34,7 @@ namespace ExemploMongoDB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<IDbHelper, DbHelper>();
             services.AddTransient<IUsuarioDados, UsuarioDAL>();
             services.AddTransient<IUsuarioBLL, UsuarioBLL>();
 
